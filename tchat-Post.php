@@ -12,7 +12,8 @@
         <h1>Mon  site en PHP</h1>
         
         <p>
-            Bienvenue sur mon mini-tchat !<br />
+           
+            
         </p>
        
 
