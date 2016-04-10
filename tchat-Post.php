@@ -6,13 +6,13 @@
     </head>
     <body>
         <?php include("entete.php");?>
-         
+          <?php include("menu.php");?>
 
        <?php
             // Connexion à la base de données
             try
             {
-                 $bdd = new PDO('mysql:host=localhost;dbname=Projet_PHP;charset=utf8', 'root', '');
+                 $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
             }   
             catch(Exception $e)
             {
@@ -20,7 +20,7 @@
             }   
 
             // Insertion du message à l'aide d'une requête préparée
-            $req = $bdd->prepare('INSERT INTO mini-tchat (pseudo, message) VALUES(?, ?)');
+            $req = $bdd->prepare('INSERT INTO tchat (pseudo, message) VALUES(?, ?)');
             $req->execute(array($_POST['pseudo'], $_POST['message']));
 
             // Redirection du visiteur vers la page du minichat
