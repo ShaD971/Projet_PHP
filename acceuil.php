@@ -6,17 +6,36 @@
     </head>
     <body>
         <?php include("entete.php");?>
+
          
-
-            <div id="corps">
-        <h1>Mon  site en PHP</h1>
-        
+    
+       <form action="tchat-Post.php" method="post">
         <p>
-            Bienvenue sur mon mini-tchat !<br />
-        </p>
-       
+        <label for="pseudo">Pseudo</label> : <input type="text" name="pseudo" id="pseudo" /><br />
+        <label for="message">Message</label> :  <input type="text" name="message" id="message" /><br />
 
-    </div>
+        <input type="submit" value="Envoyer" />
+  </p>
+    </form>
+
+    <?php
+    try{
+      //conection database
+      $bdd= new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+    }catch(Exception $e){
+      die('Erreur:'.$e->getMessage());
+    }
+
+    $reponse = $bdd->query('SELECT pseudo,message FROM tchat ORDER BY ID DESC LIMIT 0, 10');
+    while ($donnees = $reponse->fetch())
+{
+    echo '<p><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> : ' . htmlspecialchars($donnees['message']) . '</p>';
+}
+
+    ?>
+
+
+   
 
     <?php include("pied_de_page.php"); ?>
 

@@ -8,16 +8,24 @@
         <?php include("entete.php");?>
          
 
-            <div id="corps">
-        <h1>Mon  site en PHP</h1>
-        
-        <p>
-           
-            
-        </p>
-       
+       <?php
+            // Connexion à la base de données
+            try
+            {
+                 $bdd = new PDO('mysql:host=localhost;dbname=Projet_PHP;charset=utf8', 'root', '');
+            }   
+            catch(Exception $e)
+            {
+                die('Erreur : '.$e->getMessage());
+            }   
 
-    </div>
+            // Insertion du message à l'aide d'une requête préparée
+            $req = $bdd->prepare('INSERT INTO mini-tchat (pseudo, message) VALUES(?, ?)');
+            $req->execute(array($_POST['pseudo'], $_POST['message']));
+
+            // Redirection du visiteur vers la page du minichat
+            header('Location: acceuil.php');
+        ?>
 
     <?php include("pied_de_page.php"); ?>
 
