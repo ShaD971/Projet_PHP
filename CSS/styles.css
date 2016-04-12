@@ -21,11 +21,56 @@ header
 /*********************************************************************************/
 /* menu                                                                      */
 /*********************************************************************************/
-#menu ul{
-  width: 200px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+#menu{
+	width:120px;
+	margin:20px 0 0 auto;
+	position:relative;
+	
+	padding:0;
+}
+.menu{
+	height:25px;
+	width:120px;
+	padding:2px 0;
+	background:#404040;
+	text-align:center;
+
+}
+.menu a{
+	display:block;
+	width:100%;
+	height:100%;
+	color:#FFFFFF;
+	font-family:arial,sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	text-decoration:none;
+	background:#404040;
+}
+.menu a.medium {
+	color:#FFFFFF;
+	font-size:15px;
+}
+.menu a.big {
+	color:#FFFFFF;
+	font-size:20px;
+}
+.menu a:hover, .menu a:active, .menu a:focus{
+	background:#009484;
+}
+	
+/*********************************************************************************/
+/* tchat                                                                      */
+/*********************************************************************************/
+form
+{
+	margin-left: 700px;
+	
+}
+#tchat
+{
+	margin-left: 700px;
 }
 
 /*********************************************************************************/
@@ -33,7 +78,8 @@ header
 /*********************************************************************************/
 footer
 {
-	margin-top: 400px;
+	margin-top: 350px;
 	color:teal;
 	text-align: center;
+
 }

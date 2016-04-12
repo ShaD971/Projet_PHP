@@ -31,7 +31,7 @@
     $reponse = $bdd->query('SELECT pseudo,message FROM tchat ORDER BY ID DESC LIMIT 0, 10');
     while ($donnees = $reponse->fetch())
   {
-    echo '<p><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> : ' . htmlspecialchars($donnees['message']) . '</p>';
+    echo '<p id="tchat"><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> : ' . htmlspecialchars($donnees['message']) . '</p>';
   }
  $reponse->closeCursor();
     ?>

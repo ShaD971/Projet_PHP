@@ -1,6 +1,6 @@
 <header>
 	<div id="entete">
-	<h1>Mini tchat en PHP</h1>
+	<h1>Laisse ton Message</h1>
 </div>
 
 
